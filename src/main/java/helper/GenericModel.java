@@ -120,7 +120,9 @@ public class GenericModel<T> {
                     Column columnInfor = field.getAnnotation(Column.class);
                     // tuỳ thuộc vào kiểu dữ liệu của trường, lấy giá trị ra theo các hàm khác nhau.
                     // phải bổ sung các kiểu dữ liệu cần thiết.
+                    System.out.println(field.getType().getSimpleName());
                     switch (field.getType().getSimpleName()) {
+
                         case SQLConstant.PRIMITIVE_INT:
                             // set giá trị của trường đó cho đối tượng mới tạo ở trên.
                             field.set(obj, resultSet.getInt(columnInfor.columnName()));
